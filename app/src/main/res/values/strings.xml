@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">FocusGrid</string>
+
+    <string name="home_title">FocusGrid</string>
+    <string name="home_play_cta">Play</string>
+    <string name="home_best_time">Best time</string>
+    <string name="home_best_time_placeholder">—</string>
+    <string name="home_current_streak">Current streak</string>
+    <string name="home_streak_days">%1$d day streak</string>
+    <string name="home_no_streak">Play today to start a streak</string>
+    <string name="home_difficulty_label">Grid size</string>
+
+    <string name="game_next_label">Next</string>
+    <string name="game_pause">Pause</string>
+    <string name="game_resume">Resume</string>
+    <string name="game_paused_title">Paused</string>
+    <string name="game_cell_content_description">Cell showing %1$d</string>
+    <string name="game_cell_cleared_content_description">Cell cleared</string>
+
+    <string name="result_title">Nice work</string>
+    <string name="result_time_label">Time</string>
+    <string name="result_mistakes_label">Mistaps</string>
+    <string name="result_best_label">Personal best</string>
+    <string name="result_new_best">New personal best!</string>
+    <string name="result_play_again">Play again</string>
+    <string name="result_home">Home</string>
+</resources>
