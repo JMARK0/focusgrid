@@ -313,3 +313,11 @@
   color: var(--paper);
   text-shadow: 1px 1px 0 var(--ink);
 }
+
+.copyright {
+  margin-top: 12px;
+  font-size: 0.85rem;
+  color: var(--paper);
+  opacity: 0.75;
+  text-shadow: 1px 1px 0 var(--ink);
+}
