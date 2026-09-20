@@ -1,0 +1,315 @@
+.home-screen {
+  text-align: center;
+  gap: 8px;
+  background: linear-gradient(var(--sky), var(--sky-deep));
+  background-attachment: fixed;
+  position: relative;
+}
+
+/* A few pixel "clouds" — pure CSS, no image assets. */
+.home-screen::before,
+.home-screen::after {
+  content: '';
+  position: absolute;
+  top: 40px;
+  width: 90px;
+  height: 34px;
+  background: #ffffff;
+  border: 3px solid var(--ink);
+  border-radius: 20px;
+  box-shadow: 30px -12px 0 -4px #fff, 30px -12px 0 -1px var(--ink), -28px 6px 0 -6px #fff, -28px 6px 0 -3px var(--ink);
+  opacity: 0.9;
+  z-index: 0;
+}
+
+.home-screen::before {
+  left: 6%;
+}
+
+.home-screen::after {
+  right: 6%;
+  top: 100px;
+  transform: scale(0.8);
+}
+
+.retro-logo {
+  position: relative;
+  z-index: 1;
+  width: 64px;
+  height: 64px;
+  margin-top: 4px;
+  filter: drop-shadow(3px 3px 0 var(--ink));
+  transform: rotate(-4deg);
+  animation: logoFloat 2600ms ease-in-out infinite;
+}
+
+@keyframes logoFloat {
+  0%,
+  100% {
+    transform: rotate(-4deg) translateY(0);
+  }
+  50% {
+    transform: rotate(-2deg) translateY(-4px);
+  }
+}
+
+.home-title,
+.world-label,
+.stage-name,
+.summary-value,
+.result-time,
+.rank-badge,
+.timeout-title,
+.next-label,
+.elapsed,
+.combo-badge,
+.time-left {
+  font-family: var(--font-display);
+}
+
+.home-title {
+  position: relative;
+  z-index: 1;
+  font-size: clamp(1.4rem, 8vw, 2.1rem);
+  line-height: 1.4;
+  margin: 8px 0 2px;
+  color: var(--coin);
+  -webkit-text-stroke: 2px var(--ink);
+  paint-order: stroke fill;
+  text-shadow: 3px 3px 0 var(--ink);
+}
+
+.world-label {
+  position: relative;
+  z-index: 1;
+  font-size: 0.7rem;
+  color: var(--paper);
+  text-shadow: 2px 2px 0 var(--ink);
+  margin-bottom: 20px;
+}
+
+.summary-row {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.summary-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: var(--paper);
+}
+
+.summary-icon {
+  font-size: 1rem;
+}
+
+.summary-value {
+  font-size: 0.9rem;
+  color: var(--ink);
+}
+
+.stage-path {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 420px;
+}
+
+.stage-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.stage-connector {
+  width: 6px;
+  height: 22px;
+  background: repeating-linear-gradient(var(--paper), var(--paper) 6px, transparent 6px, transparent 12px);
+  opacity: 0.6;
+}
+
+.connector-lit {
+  background: repeating-linear-gradient(var(--coin), var(--coin) 6px, transparent 6px, transparent 12px);
+  opacity: 1;
+}
+
+.stage-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 12px 16px;
+  margin-bottom: 6px;
+  background: var(--paper);
+  color: var(--ink);
+  cursor: pointer;
+  text-align: left;
+}
+
+.stage-locked {
+  opacity: 0.6;
+  cursor: default;
+  background: #d8d0c0;
+}
+
+.stage-cleared {
+  background: linear-gradient(135deg, var(--paper) 55%, var(--stage-accent) 220%);
+}
+
+.stage-badge {
+  position: relative;
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 0.62rem;
+  background: var(--stage-accent);
+  color: #fff;
+  border: 3px solid var(--ink);
+  border-radius: 4px;
+}
+
+.stage-locked .stage-badge {
+  background: var(--color-surface-variant);
+  font-size: 1.1rem;
+}
+
+.stage-flag {
+  position: absolute;
+  top: -14px;
+  right: -10px;
+  font-size: 1.1rem;
+}
+
+.stage-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.stage-name {
+  font-size: 0.68rem;
+  margin-bottom: 4px;
+}
+
+.stage-sub {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: var(--color-on-surface-muted);
+}
+
+.stage-progress-track {
+  margin-top: 6px;
+  height: 8px;
+  border: 2px solid var(--ink);
+  border-radius: 3px;
+  background: var(--color-surface-variant);
+  overflow: hidden;
+}
+
+.stage-progress-fill {
+  height: 100%;
+  background: var(--stage-accent);
+  transition: width 220ms ease;
+}
+
+.stars {
+  flex-shrink: 0;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  color: #d8d0c0;
+  -webkit-text-stroke: 1px var(--ink);
+  paint-order: stroke fill;
+}
+
+.star-filled {
+  color: var(--coin);
+}
+
+.app-footer {
+  position: relative;
+  z-index: 1;
+  margin-top: auto;
+  padding-top: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.social-label {
+  font-family: var(--font-display);
+  font-size: 0.6rem;
+  color: var(--paper);
+  text-shadow: 1px 1px 0 var(--ink);
+  margin-bottom: 4px;
+}
+
+.social-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: var(--pixel-border);
+  box-shadow: var(--pixel-shadow-sm);
+  border-radius: 4px;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.social-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+
+.social-more {
+  background: var(--ink);
+  font-size: 1.4rem;
+}
+
+.copy-link-btn {
+  border: var(--pixel-border);
+  box-shadow: var(--pixel-shadow-sm);
+  background: var(--paper);
+  color: var(--ink);
+  border-radius: 4px;
+  padding: 8px 18px;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  cursor: pointer;
+}
+
+.copy-link-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+
+.share-status {
+  font-size: 0.9rem;
+  color: var(--paper);
+  text-shadow: 1px 1px 0 var(--ink);
+}
